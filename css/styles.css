@@ -431,6 +431,7 @@ button {
 
 /* ================== /PORTFOLIO ================= */
 #covers {
+  position: relative;
   padding-bottom: 80px;
 }
 @media only screen and (min-width: 768px) {
@@ -440,70 +441,76 @@ button {
 }
 @media only screen and (min-width: 1280px) {
   #covers {
-    padding-bottom: 164px;
+    position: relative;
+    width: 1440px;
+    height: 960px;
+    margin: 0 auto;
+    overflow: hidden;
   }
 }
 
 .covers-container {
   overflow: hidden;
   padding: 0;
-  height: 280px;
+  height: 960px;
   transform: rotate(16deg);
 }
-.covers-first-box {
-  margin-bottom: 7px;
-  background-color: var(--c-lt-elem-bg-accent);
+
+.covers-first-box,
+.covers-second-box,
+.covers-third-box,
+.covers-fourth-box,
+.covers-fifth-box {
   display: flex;
+  width: 100%;
+  height: 314px; /* desctop версія */
+}
+/* .covers-first-box {
   z-index: 1;
-}
-.covers-second-box {
-  display: flex;
-}
-.covers-second-box .photo-project {
-  color: var(--c-lt-elem-accent);
-  background-color: var(--c-lt-elem-bg);
-}
-.covers-second-box .photo-project::before {
-  background-color: var(--c-lt-text-main);
-}
-.covers-list {
+} */
+
+/* .covers-list {
   position: relative;
   display: flex;
   flex-shrink: 0;
   margin: 0;
   min-width: 100%;
-  white-space: nowrap;
+  white-space: nowrap; 
+ animation: scroll 20s linear infinite;
+Ї} */
+
+.covers-first-box .covers-list,
+.covers-third-box .covers-list,
+.covers-fifth-box .covers-list {
   animation: scroll 20s linear infinite;
 }
-.covers-second-box .covers-list {
+.covers-second-box .covers-list,
+.covers-fourth-box .covers-list {
   animation: reverseScroll 20s linear infinite;
 }
+/* ............................................. */
 .photo-project {
   position: relative;
+  overflow: hidden;
   padding: 32px 28px;
+}
+.img-project {
+  width: 544px; /* desctop версія */
+  height: 314px;
+  object-fit: cover;
 }
 @media only screen and (min-width: 768px) {
   .covers-first-box {
     margin-bottom: 0;
   }
   .covers-container {
-    height: 280px;
+    height: 960px;
   }
   .photo-project {
     padding: 40px 28px;
   }
 }
-.photo-project::before {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background-color: var(--c-lt-elem-accent);
-  left: -4px;
-  top: 50%;
-  border-radius: 2px;
-  transform: translateY(-50%);
-}
+
 @keyframes scroll {
   from {
     transform: translateX(0);
