@@ -450,15 +450,18 @@ button {
 }
 
 .covers-container {
+  display: flex;
   position: relative;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   overflow: hidden;
   transform: rotate(16deg);
 }
+
 .covers-wrapper {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   align-items: center;
   width: 100%;
 }
@@ -491,6 +494,7 @@ button {
 .photo-project {
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .img-project {
   width: 282.29px;
