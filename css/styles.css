@@ -480,17 +480,13 @@ button {
   padding: 0;
   list-style: none;
   gap: 16px;
+  animation-play-state: paused;
 }
 
-.covers-first-box .covers-list,
-.covers-third-box .covers-list,
-.covers-fifth-box .covers-list {
-  animation: scroll 20s linear infinite;
+#covers.animate .covers-list {
+  animation-play-state: running;
 }
-.covers-second-box .covers-list,
-.covers-fourth-box .covers-list {
-  animation: reverseScroll 20s linear infinite;
-}
+
 /* ............................................. */
 .photo-project {
   position: relative;
@@ -500,10 +496,8 @@ button {
   width: 282.29px;
   height: auto;
   display: block;
-  /* height: 162.94px;
-  object-fit: cover;
-  margin-bottom: 15px; */
 }
+
 @media only screen and (min-width: 768px) {
   .covers-first-box {
     margin-bottom: 0;
@@ -515,7 +509,7 @@ button {
     padding: 40px 28px;
   }
   .img-project {
-    width: 544px; /* desctop версія */
+    width: 544px;
     height: 314px;
   }
 }
@@ -535,6 +529,15 @@ button {
   to {
     transform: translateX(0);
   }
+}
+.covers-first-box .covers-list,
+.covers-third-box .covers-list,
+.covers-fifth-box .covers-list {
+  animation: scroll 20s linear infinite;
+}
+.covers-second-box .covers-list,
+.covers-fourth-box .covers-list {
+  animation: reverseScroll 20s linear infinite;
 }
 /* ================ FOOTER SECTION =============== */
 .section-footer {
